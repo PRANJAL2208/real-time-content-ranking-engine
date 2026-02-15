@@ -1,7 +1,12 @@
 import requests
 from storage.db import SessionLocal, Article
+import os
+from dotenv import load_dotenv
 
-API_KEY = "da48be64b21e48aa89eaaf86fa70e2f9"
+load_dotenv()
+
+API_KEY = os.getenv("NEWS_API_KEY")
+
 
 def fetch_articles():
     print("Fetching articles...")
